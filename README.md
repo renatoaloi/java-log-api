@@ -2,7 +2,14 @@
 
 Java API RESTfull for Log managing. It allows you to upload log batch files, list and search for Log entries, and edit log entries. 
 
-> TODO: Add list pagination
+- TODO: Add list pagination
+- TODO: Add authentication
+
+## Environment
+
+Visual Studio Code with Maven as packager manager
+
+> Reference: https://www.youtube.com/watch?v=dkmlOi_MNb4
 
 ## Usage
 
