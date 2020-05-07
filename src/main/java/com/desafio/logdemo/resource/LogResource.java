@@ -1,4 +1,4 @@
-package com.desafio.logdemo.model.resource;
+package com.desafio.logdemo.resource;
 
 import java.time.LocalDate;
 

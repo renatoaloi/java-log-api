@@ -3,7 +3,7 @@ package com.desafio.logdemo.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.desafio.logdemo.model.datasource.Log;
+import com.desafio.logdemo.model.Log;
 import com.desafio.logdemo.repository.LogRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.desafio.logdemo.model.datasource;
+package com.desafio.logdemo.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;

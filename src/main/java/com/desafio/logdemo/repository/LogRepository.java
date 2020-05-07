@@ -1,6 +1,6 @@
 package com.desafio.logdemo.repository;
 
-import com.desafio.logdemo.model.datasource.Log;
+import com.desafio.logdemo.model.Log;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
