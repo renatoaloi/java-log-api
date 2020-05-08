@@ -45,4 +45,9 @@ public class File {
     @Setter
     @Column(name = "error_msg", length = 2000)
     private String errorMsg;
+
+    @Getter
+    @Setter
+    @Column(name = "process_msg", length = 2000)
+    private String processMsg;
 }
