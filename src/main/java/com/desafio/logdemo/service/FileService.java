@@ -5,6 +5,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Optional;
 
 import com.desafio.logdemo.model.File;
 import com.desafio.logdemo.repository.FileRepository;
@@ -53,5 +55,21 @@ public class FileService {
         // save, flush and return the entity id
         fileRepository.saveAndFlush(entity);
         return entity.getId();
+    }
+
+    public Optional<File> get(Long id) {
+        return fileRepository.findById(id);
+    }
+
+    public void add(File entity) {
+        fileRepository.saveAndFlush(entity);
+    }
+
+    public List<File> list() {
+        return fileRepository.findAll();
+    }
+
+    public void edit(File entity) {
+        this.add(entity);
     }
 }
