@@ -61,27 +61,15 @@ public class LogService {
                 reader = new BufferedReader(new FileReader(filePath));
                 String line = reader.readLine();
                 while (line != null) {
-                    System.out.println(line);
-                    // 
-                    String[] fields = line.split("|");
-                    System.out.println(line);
-                    for (int i = 0; i < fields.length; i++) {
-                        System.out.println(fields[0]);
-                        System.out.println(fields[1]);
-                        System.out.println(fields[2]);
-                        System.out.println(fields[3]);
-                        System.out.println(fields[4]);
-
-                        break;
-
-                        /*Log log = new Log();
-                        log.setEntryDate(LocalDate.parse(fields[0], DateTimeFormatter.ofPattern("yyyy-MM-dd")));
-                        log.setIpAddress(fields[1]);
-                        log.setHttpMethod(fields[2]);
-                        log.setReturnCode(Integer.parseInt(fields[3]));
-                        log.setBrowserDetail(fields[4]);
-                        logRepository.saveAndFlush(log);*/
-                    }
+                    String[] fields = line.split("\\|");
+                    LocalDate d = LocalDate.parse(fields[0].substring(0, 10), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                    Log log = new Log();
+                    log.setEntryDate(d);
+                    log.setIpAddress(fields[1]);
+                    log.setHttpMethod(fields[2]);
+                    log.setReturnCode(Integer.parseInt(fields[3]));
+                    log.setBrowserDetail(fields[4]);
+                    logRepository.saveAndFlush(log);
                     // read next line
                     line = reader.readLine();
                 }
