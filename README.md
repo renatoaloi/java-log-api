@@ -10,8 +10,9 @@ Java API RESTfull for Log managing. It allows you to upload log batch files, lis
 - DONE: API RESTFull Spring Boot
 - DONE: Handle Upload File
 - DONE: Import uploaded data
+- TODO: Frontend Authentication (Login)
 - TODO: Frontend CRUD for file upload
-- TODO: Solve CORS problems
+- DONE: Solve CORS problems (at front only)
 - TODO: Frontend CRUD for log management
 - TODO: Backend validations
 - TODO: Frontend validations
@@ -19,7 +20,7 @@ Java API RESTfull for Log managing. It allows you to upload log batch files, lis
 - TODO: Test coverage
 - TODO: Terraform for CD/CI pipeline
 - TODO: Add list pagination
-- TODO: Add authentication
+- TODO: Add backend token authentication
 
 ## Environment
 
