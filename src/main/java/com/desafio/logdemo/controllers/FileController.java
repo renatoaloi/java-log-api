@@ -2,6 +2,7 @@ package com.desafio.logdemo.controllers;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 import com.desafio.logdemo.model.File;
 import com.desafio.logdemo.model.Log;
@@ -10,6 +11,7 @@ import com.desafio.logdemo.service.LogService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -48,10 +50,9 @@ public class FileController {
     }
 
     @PostMapping(value = "/upload")
-    public void uploadFile(@RequestParam final MultipartFile mfile) {
-        //final Long savedFileId = fileService.uploadFile(mfile);
-        // load the data async
-        //logService.handleBatchFile(savedFileId);
+    @Async("asyncExecutor")
+    public CompletableFuture<File> uploadFile(@RequestParam final MultipartFile mfile) {
+        return fileService.uploadFile(mfile);
     }
     
 }

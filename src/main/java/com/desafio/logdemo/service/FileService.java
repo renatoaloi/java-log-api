@@ -7,12 +7,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 import com.desafio.logdemo.model.File;
 import com.desafio.logdemo.repository.FileRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,7 +26,8 @@ public class FileService {
     @Value("${logdemo.storage.path}")
     private String storagePath;
 
-    public Long uploadFile(MultipartFile mfile) {
+    @Async("asyncExecutor")
+    public CompletableFuture<File> uploadFile(MultipartFile mfile) {
         
         // creating unique filename
         String originalName = mfile.getOriginalFilename();
@@ -54,7 +57,7 @@ public class FileService {
 
         // save, flush and return the entity id
         fileRepository.saveAndFlush(entity);
-        return entity.getId();
+        return CompletableFuture.completedFuture(entity);
     }
 
     public Optional<File> get(Long id) {
@@ -72,4 +75,5 @@ public class FileService {
     public void edit(File entity) {
         this.add(entity);
     }
+    
 }

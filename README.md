@@ -12,6 +12,7 @@ Java API RESTfull for Log managing. It allows you to upload log batch files, lis
 - DONE: Import uploaded data
 - TODO: Frontend Authentication (Login)
 - TODO: Frontend CRUD for file upload
+- TODO: Add service logs for debugging prouposes
 - DONE: Solve CORS problems (at front only)
 - TODO: Frontend CRUD for log management
 - TODO: Backend validations
