@@ -54,9 +54,11 @@ public class FileService {
         } catch (Exception e) {
             entity.setErrorMsg(e.getMessage());
         }
-
-        // save, flush and return the entity id
-        fileRepository.saveAndFlush(entity);
+        finally {
+            // save, flush and return the entity id
+            fileRepository.saveAndFlush(entity);
+        }
+        
         return CompletableFuture.completedFuture(entity);
     }
 

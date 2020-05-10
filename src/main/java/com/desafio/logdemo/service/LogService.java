@@ -7,7 +7,6 @@ import com.desafio.logdemo.model.Log;
 import com.desafio.logdemo.repository.LogRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,8 +15,7 @@ public class LogService {
     @Autowired
     private LogRepository logRepository;
 
-    @Value("${logdemo.field.separator}")
-    private String separator;
+    
 
     public Optional<Log> get(Long id) {
         return logRepository.findById(id);

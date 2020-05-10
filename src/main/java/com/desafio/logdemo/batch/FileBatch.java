@@ -15,6 +15,7 @@ import com.desafio.logdemo.repository.LogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
 
 @Component
 public class FileBatch {
@@ -24,6 +25,9 @@ public class FileBatch {
 
     @Autowired
     private LogRepository logRepository;
+    
+    @Value("${logdemo.field.separator}")
+    private String separator;
 
     //@Scheduled(fixedRate = 60000 * 5L) // every 5 min
     @Scheduled(fixedRate = 60000 * 1L) // every 1 min
@@ -48,7 +52,7 @@ public class FileBatch {
 
                 // Read the file
                 while (line != null) {
-                    String[] fields = line.split("\\|");
+                    String[] fields = line.split(separator);
                     LocalDate d = LocalDate.parse(fields[0].substring(0, 10), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
                     // new log
