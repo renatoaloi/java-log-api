@@ -2,26 +2,27 @@
 
 Java API RESTfull for Log managing. It allows you to upload log batch files, list and search for Log entries, and edit log entries. 
 
-- DONE: Decide Framework: Spring
-- DONE: Decide Database: Postegres
-- DONE: Decide Front: Angular
-- DONE: Bring VSCode environment up
-- DONE: Bring Database up with docker
-- DONE: API RESTFull Spring Boot
-- DONE: Handle Upload File
-- DONE: Import uploaded data
-- TODO: Frontend Authentication (Login)
-- TODO: Frontend CRUD for file upload
-- TODO: Add service logs for debugging prouposes
-- DONE: Solve CORS problems (at front only)
-- TODO: Frontend CRUD for log management
-- TODO: Backend validations
-- TODO: Frontend validations
-- TODO: Unit tests
-- TODO: Test coverage
-- TODO: Terraform for CD/CI pipeline
-- TODO: Add list pagination
-- TODO: Add backend token authentication
+## TODO List
+- [x] Decide Framework: Spring
+- [x] Decide Database: Postegres
+- [x] Decide Front: Angular
+- [x] Bring VSCode environment up
+- [x] Bring Database up with docker
+- [x] API RESTFull Spring Boot
+- [x] Handle Upload File
+- [x] Import uploaded data
+- [ ] Frontend Authentication (Login)
+- [x] Frontend CRUD for file upload
+- [ ] Add service logs for debugging propouses
+- [x] Solve CORS problems (at front only)
+- [x] Frontend CRUD for log management
+- [ ] Backend validations
+- [x] Frontend validations
+- [ ] Unit tests
+- [ ] Test coverage
+- [ ] Terraform for CD/CI pipeline
+- [x] Add list pagination
+- [ ] Add backend token authentication
 
 ## Environment
 
